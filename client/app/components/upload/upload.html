@@ -1,0 +1,38 @@
+<div class="upload">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Please select album than you can upload images</h4>
+
+      <div layout="row">
+        <md-input-container>
+          <label>Select album</label>
+          <md-select ng-model="vm.selectedAlbum">
+            <md-option ng-repeat="album in vm.albums" ng-value="album.id">
+              {{album.name}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+
+      <div ng-hide="!vm.selectedAlbum">
+        <div ng-repeat="file in vm.oldFile">
+          <img class="img-container"
+               ngf-thumbnail="file || '/thumb.jpg'"
+               ngf-size="{width: 300, height: 300, quality: 0.9}"
+          />
+          <md-progress-linear md-mode="determinate"
+                              value="{{file.progress}}"></md-progress-linear>
+        </div>
+        <div class="drop-box-2"
+          ngf-drop ngf-select ng-model="files" class="drop-box-2"
+          ngf-drag-over-class="'dragover'" ngf-multiple="true"
+          ngf-allow-dir="true"
+          accept="image/*" ngf-keep="distinct"
+          ngf-pattern="'image/*'">
+          <i class="material-icons">add_circle_outline</i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
