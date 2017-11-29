@@ -1,0 +1,19 @@
+<div>
+    <div class="m-2">
+        <button ui-sref="dashboard">
+          <i class="material-icons">keyboard_arrow_left</i>
+          <i class="material-icons">folder</i>
+          {{vm.album.name}}
+        </button>
+    </div>
+    <div ng-cloak class="d-flex">
+
+          <div class="card m-2"
+               style="width: 20rem;"
+               ng-repeat="photo in vm.photos"
+               ui-sref="photoView({ id: photo.id })">
+            <img class="card-img-top" ng-src="{{photo.picture}}" alt="Card image cap">
+          </div>
+
+    </div>
+</div>

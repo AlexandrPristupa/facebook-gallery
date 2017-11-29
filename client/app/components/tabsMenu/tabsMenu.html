@@ -1,0 +1,12 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active"
+       ng-class="{active: vm.$state.current.name === 'dashboard'}"
+       ui-sref="dashboard"><i class="material-icons">insert_photo</i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"
+       ng-class="{active: vm.$state.current.name === 'upload'}"
+       ui-sref="upload"><i class="material-icons">file_upload</i></a>
+  </li>
+</ul>

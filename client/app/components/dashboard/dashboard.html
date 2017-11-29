@@ -1,0 +1,21 @@
+<div class="dashboard">
+    <div>
+        <div class="m-b-5">
+            Welcome, {{ vm.UserModelService.currentFacebook.name }}.
+        </div>
+          <div class="card" style="width: 20rem;"
+               ng-repeat="album in vm.albums | orderBy: '-updated_time'"
+               ui-sref="albumView({ id: album.id })">
+            <img class="card-img-top" src="{{ album.cover_photo.picture }}" alt="{{ album.name }}">
+            <div class="card-body">
+              <h4 class="card-title">{{ album.name }}</h4>
+              <p class="card-text">
+                <i class="material-icons">collections</i>{{ album.count }} files
+              </p>
+              <p class="card-text">
+                <i class="material-icons">update</i>{{ vm.moment.utc(album.updated_time).fromNow() }}
+              </p>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+.upload {
+  .drop-box {
+    cursor: pointer;
+    width: 100%;
+    height: 300px;
+    border: 3px dashed #2196f3;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.dragover {
+      border: 2px dashed #ff4081;
+    }
+  }
+
+  .drop-box-2 {
+    cursor: pointer;
+    border: 3px dashed #2196f3;
+    border-radius: 6px;
+    text-align: center;
+    &.dragover {
+      border: 2px dashed #ff4081;
+    }
+    &:hover {
+      background: #f3f3f3;
+    }
+    .title {
+      position: absolute;
+      bottom: 12px;
+      color: #2196f3;
+      font-size: 11px;
+    }
+    i {
+      color: #2196f3;
+      font-size: 50px;
+    }
+  }
+}

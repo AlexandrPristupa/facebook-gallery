@@ -1,0 +1,4 @@
+<div class="app">
+    <div ui-view ng-if="!vm.$state.is('home')"></div>
+    <div ui-view="home" ng-if="vm.$state.is('home')"></div>
+</div>

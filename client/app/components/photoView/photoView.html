@@ -1,0 +1,23 @@
+<div class="photoView">
+    <div>
+        <button ng-if="vm.photo.name" ui-sref="albumView({id: vm.photo.album.id})">
+            {{vm.photo.name}}
+        </button>
+        <button ng-if="!vm.photo.name" ui-sref="albumView({id: vm.photo.album.id})">
+          <i class="material-icons">keyboard_arrow_left</i>
+          Back
+        </button>
+    </div>
+    <div ng-cloak>
+
+      <div class="card">
+        <div class="card-body">
+          <img ng-src="{{vm.photo.images[0].source}}" alt="Washed Out">
+          <p>File name: {{vm.photo.images[0].source}}</p>
+        </div>
+        <div ng-if="vm.photo.name">
+            <p class="card-title">Caption: {{vm.photo.name}}</p>
+        </div>
+      </div>
+    </div>
+</div>
